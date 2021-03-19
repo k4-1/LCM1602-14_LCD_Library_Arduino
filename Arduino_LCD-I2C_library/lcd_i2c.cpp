@@ -85,5 +85,6 @@ void lcd_i2c::print(const char c[])
 	{
       char x = c[i];
 	  write((int)x);
+	  Serial.println("test");
 	}
 }
