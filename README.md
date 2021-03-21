@@ -12,6 +12,10 @@ STEP 2 : Put the downloaded files in Arduino library folder separately [Document
 
 ![lib1](https://user-images.githubusercontent.com/80098610/111907497-91255a00-8a90-11eb-8677-df6ff2abc415.PNG)
 
+STEP 3 : Check both files if its already got into the libraries by opening the Arduino IDE then got to sketch [Arduino IDE > sketch > Include Library]
 
+![Screenshot (2)](https://user-images.githubusercontent.com/80098610/111908016-92578680-8a92-11eb-9e39-bbd0aeb02756.png)
+
+If the libraries are there, then you are ready to use it.
 
 
