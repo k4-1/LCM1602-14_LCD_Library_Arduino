@@ -8,4 +8,10 @@ The library file must be downloaded and saved inside Arduino library file before
 # Add Library 
 STEP 1 : Download the library file (Arduino_LCD-I2C_Library and Arduino_LCD-SPI_Library)
 
+STEP 2 : Put the downloaded files in Arduino library folder separately [Documents > Arduino > libraries]
+
+![lib1](https://user-images.githubusercontent.com/80098610/111907497-91255a00-8a90-11eb-8677-df6ff2abc415.PNG)
+
+
+
 
