@@ -17,12 +17,11 @@
 #  * NodeMCU V3 3V3(OUT) - LCD VDD
 #  * NodeMCU V3 GND      - LCD VSS
 #  *
-#  * Arduino Uno/Mega SDA      - LCD SDA
-#  * Arduino Uno/Mega SCL      - LCD SCK
-#  * Arduino Uno/Mega 3V3(OUT) - LCD VDD
-#  * Arduino Uno/Mega GND      - LCD VSS
+#  * Arduino/Maker Uno/Mega SDA      - LCD SDA
+#  * Arduino/Maker Uno/Mega SCL      - LCD SCK
+#  * Arduino/Maker Uno/Mega 3V3(OUT) - LCD VDD
+#  * Arduino/Maker Uno/Mega GND      - LCD VSS
 #  * 
-#  *
 #  * Arduino Nano A4      - LCD SDA
 #  * Arduino Nano A5      - LCD SCK
 #  * Arduino Nano 3V3(OUT)- LCD VDD
