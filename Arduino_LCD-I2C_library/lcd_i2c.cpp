@@ -83,7 +83,8 @@ void lcd_i2c::print(const char c[])
 {
 	for(int i =0; i < strlen(c); i++ ) 
 	{
-      char x = c[i];
-	  write((int)x);
+		char x = c[i];
+		write((int)x);
 	}
+	
 }
