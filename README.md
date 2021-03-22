@@ -36,9 +36,41 @@ If the libraries are there, then you are ready to use it but if the libraries do
 
 # Create Object for I2C
 - Create object using class
-- Set the communcation address, setup the columns and rows required for LCD
+- Set the communication address, setup the columns and rows required for LCD
 - The I2C communication for this LCD is 0x3e (HEX) or 62 (DEC), 16 is the number of the columns, 2 is the number of the rows
 
 ```
 lcd_i2c lcd(0x3E,16,2);
 ```
+
+# Create Object for SPI
+- Create object using class
+- Set the Chip Selected Pin
+- D8 for NodeMCU V3 ESP8266, 10 for any Arduino and Maker
+
+```
+lcd_spi lcd(D8);
+```
+
+# Set Cursor
+- Set the cursor to a specific position
+- First parameter sets to the column, second parameter sets the row
+- Set the cursor to column 0 (first column) and row 0 (first row)
+
+```
+lcd.setCursor(0,0);
+```
+
+# Write to LCD Display
+- Write string to the LCD
+
+```
+lcd.print("Hello World")
+```
+
+# Clear LCD Display
+- Clear the data on the display
+
+```
+lcd.clear();
+``` 
