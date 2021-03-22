@@ -18,10 +18,18 @@ STEP 3 : Check both files if its already got into the libraries by opening the A
 
 ![Screenshot (2)](https://user-images.githubusercontent.com/80098610/111908016-92578680-8a92-11eb-9e39-bbd0aeb02756.png)
 
-If the libraries are there, then you are ready to use it.
+If the libraries are there, then you are ready to use it but if the libraries does not appear, you need to restart Arduino IDE by closing the IDE and open back.
 
 # Import LCD I2C
 - Import lcd_i2c library
-'#include <lcd_i2c.h>'
 
+```
+#include <lcd_i2c.h>
+```
 
+# Import LCD SPI
+- Import lcd_spi library
+
+```
+#include <lcd_spi.h>
+```
