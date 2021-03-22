@@ -56,10 +56,10 @@ private:
 
   uint8_t addr;
   uint8_t cols;
-	uint8_t rows;
+  uint8_t rows;
   uint8_t col;
-	uint8_t row;
-	uint8_t charsize;
+  uint8_t row;
+  uint8_t charsize;
   uint8_t _command;
   int buff;
   int buffs;
