@@ -65,7 +65,7 @@ lcd.setCursor(0,0);
 - Write string to the LCD
 
 ```
-lcd.print("Hello World")
+lcd.print("Hello World");
 ```
 
 # Clear LCD Display
