@@ -52,7 +52,7 @@ lcd_i2c lcd(0x3E,16,2);
 lcd_spi lcd(D8);
 ```
 
-#Initialize
+# Initialize
 - LCD intiallization function
 - For SPI need to initialize the column and row here, (16,2)
 
