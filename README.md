@@ -22,5 +22,6 @@ If the libraries are there, then you are ready to use it.
 
 # Import LCD I2C
 - Import lcd_i2c library
+'#include <lcd_i2c.h>'
 
 
