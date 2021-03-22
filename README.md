@@ -33,3 +33,12 @@ If the libraries are there, then you are ready to use it but if the libraries do
 ```
 #include <lcd_spi.h>
 ```
+
+# Create Object for I2C
+- Create object using class
+- Set the communcation address, setup the columns and rows required for LCD
+- The I2C communication for this LCD is 0x3e (HEX) or 62 (DEC), 16 is the number of the columns, 2 is the number of the rows
+
+```
+lcd_i2c lcd(0x3E,16,2);
+```
