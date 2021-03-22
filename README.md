@@ -52,6 +52,14 @@ lcd_i2c lcd(0x3E,16,2);
 lcd_spi lcd(D8);
 ```
 
+#Initialize
+- LCD intiallization function
+- For SPI need to initialize the column and row here, (16,2)
+
+```
+lcd.begin();
+```
+
 # Set Cursor
 - Set the cursor to a specific position
 - First parameter sets to the column, second parameter sets the row
