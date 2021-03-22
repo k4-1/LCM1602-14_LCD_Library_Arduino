@@ -21,6 +21,6 @@ STEP 3 : Check both files if its already got into the libraries by opening the A
 If the libraries are there, then you are ready to use it.
 
 # Import LCD I2C
--Import lcd_i2c library
+- Import lcd_i2c library
 
 
