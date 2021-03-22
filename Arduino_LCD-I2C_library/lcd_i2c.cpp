@@ -51,9 +51,11 @@ void lcd_i2c::clear()
 	setCursor(0,0);
 }
 
-void lcd_i2c::setCursor(uint8_t col, uint8_t row){
+void lcd_i2c::setCursor(uint8_t col, uint8_t row)
+{
 	int row_offsets[] = { 0x00, 0x40, 0x14, 0x54 };
-	if (row > rows) {
+	if (row > rows) 
+	{
 		row = rows-1;    // we count rows starting w/0k
 	}
 	command(LCD_SETDDRAMADDR | (col + row_offsets[row]));
@@ -65,13 +67,11 @@ inline void lcd_i2c::command(uint8_t value)
 	Wire.write(0x80);
 	Wire.write(value);
 	Wire.endTransmission();
-	delayMicroseconds(1000);
-		
+	delayMicroseconds(1000);	
 }
 
 inline void lcd_i2c::write(uint8_t value)
 {
-	
 	Wire.beginTransmission(addr);
 	Wire.write(0x40);
 	Wire.write(value);
