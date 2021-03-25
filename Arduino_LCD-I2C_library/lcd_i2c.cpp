@@ -36,7 +36,7 @@ void lcd_i2c::begin()
 
 void lcd_i2c::display() 
 {
-	command(DISPLAYCONTROL | DISPLAYON | CURSORON | BLINKON);
+	command(DISPLAYCONTROL | DISPLAYON | CURSOROFF | BLINKOFF);
 }
 
 void lcd_i2c::noDisplay()
