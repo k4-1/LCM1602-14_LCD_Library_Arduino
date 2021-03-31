@@ -4,6 +4,7 @@
 #include <inttypes.h>
 #include <Arduino.h>
 #include <Wire.h>
+#include <Print.h>
 
 
 lcd_i2c::lcd_i2c(uint8_t _addr, uint8_t _cols, uint8_t _rows, uint8_t _charsize)
@@ -58,7 +59,17 @@ void lcd_i2c::setCursor(uint8_t col, uint8_t row)
 	{
 		row = rows-1;    // we count rows starting w/0k
 	}
-	command(LCD_SETDDRAMADDR | (col + row_offsets[row]));
+	command(SETDDRAMADDR | (col + row_offsets[row]));
+}
+
+void lcd_i2c::scrollDisplayRight(void) 
+{
+	command(CURSORSHIFT | DISPLAYMOVE | MOVERIGHT);
+}
+
+void lcd_i2c::scrollDisplayLeft(void) 
+{
+	command(CURSORSHIFT | DISPLAYMOVE | MOVELEFT);
 }
 
 inline void lcd_i2c::command(uint8_t value)
@@ -70,7 +81,7 @@ inline void lcd_i2c::command(uint8_t value)
 	delayMicroseconds(1000);	
 }
 
-inline void lcd_i2c::write(uint8_t value)
+inline size_t lcd_i2c::write(uint8_t value)
 {
 	Wire.beginTransmission(addr);
 	Wire.write(0x40);
@@ -79,12 +90,7 @@ inline void lcd_i2c::write(uint8_t value)
 	delayMicroseconds(1000);
 }
 
-void lcd_i2c::print(const char c[])
+void lcd_i2c::printstr(const char c[])
 {
-	for(int i =0; i < strlen(c); i++ ) 
-	{
-		char x = c[i];
-		write((int)x);
-	}
-	
+	print(c);
 }
