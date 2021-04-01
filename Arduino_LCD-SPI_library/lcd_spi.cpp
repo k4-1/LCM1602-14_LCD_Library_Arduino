@@ -41,7 +41,7 @@ void lcd_spi::begin(uint8_t _cols, uint8_t _rows, uint8_t _charsize)
 
 void lcd_spi::display() 
 {
-	command(DISPLAYCONTROL | DISPLAYON | CURSORON | BLINKON);
+	command(DISPLAYCONTROL | DISPLAYON | CURSOROFF | BLINKOFF);
 }
 
 void lcd_spi::noDisplay()
@@ -63,7 +63,16 @@ void lcd_spi::setCursor(uint8_t col, uint8_t row)
 	{
 		row = rows-1;    // we count rows starting w/0k
 	}
-	command(LCD_SETDDRAMADDR | (col + row_offsets[row]));
+	command(SETDDRAMADDR | (col + row_offsets[row]));
+}
+
+void lcd_spi::scrollDisplayLeft(void) 
+{
+  command(CURSORSHIFT | DISPLAYMOVE | MOVELEFT);
+}
+void lcd_spi::scrollDisplayRight(void) 
+{
+  command(CURSORSHIFT | DISPLAYMOVE | MOVERIGHT);
 }
 
 inline void lcd_spi::command(uint8_t value)
@@ -81,7 +90,7 @@ inline void lcd_spi::command(uint8_t value)
 	delayMicroseconds(1);
 }
 
-inline void lcd_spi::write(uint8_t value)
+inline size_t lcd_spi::write(uint8_t value)
 {
 	int buffs[2];
 	buffs[0] = 0x80;
@@ -95,11 +104,7 @@ inline void lcd_spi::write(uint8_t value)
 	delayMicroseconds(1);   
 }
 
-void lcd_spi::print(const char c[])
+void lcd_spi::printstr(const char c[])
 {
-	for(int i =0; i < strlen(c); i++ ) 
-	{
-		char x = c[i];
-		write((int)x);
-	}
+	print(c);
 }
