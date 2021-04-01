@@ -36,21 +36,36 @@
 #  ****************************************************************************** */
 
 #include <lcd_i2c.h> //Import lcd_i2c library
-#include <Wire.h> //Import Wire.h library
 
 
-
-lcd_i2c lcd(0x3E,16,2); //The I2C communication for this LCD is 0x3e (HEX) or 62 (DEC), 16 is the number of the columns, 2 is the number of the rows
+lcd_i2c lcd(0x3E,16,2); //The I2C communication for this LCD is 0x3E (HEX) or 62 (DEC), 16 is the number of the columns, 2 is the number of the rows
+char text[] = "I AM DISPLAY HELLO WORLD ON LCM1602-14";//Write your text here
 
 void setup()
 {
-  lcd.begin(); //LCD initialization function
-  lcd.setCursor(1,1); //cursor setting function start with column followed by row
-  lcd.print("Hello World!"); //Write string function     
+  lcd.begin(); //LCD initialization function    
 }
 
-void loop()
+void loop() 
 {
-  // Do nothing here...
+  delay(1000); //speed to clear the LCD
+  lcd.clear();
+  unsigned int k=0;
+  //cursor setting function start with column followed by row
+  lcd.setCursor(0, 0); 
+  
+  while(text[k]!='\0')
+  {
+   lcd.print(text[k]);
+   
+    if(k>15)
+    {
+      lcd.scrollDisplayLeft(); //Scrolling text to Left
+    }
+     delay(500); //Speed Typing
+     k++;
+  } 
+  // clear screen for the next loop
+  
  
 }
