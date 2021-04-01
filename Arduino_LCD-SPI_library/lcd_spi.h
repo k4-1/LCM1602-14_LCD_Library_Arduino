@@ -58,9 +58,9 @@ class lcd_spi : public Print
         void scrollDisplayRight();
 
         void setCursor(uint8_t, uint8_t);
-        void size_t write(uint8_t);
+        virtual size_t write(uint8_t);
         void command(uint8_t);
-
+        void printstr(const char[]);
         
     
     private:
