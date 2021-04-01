@@ -2,9 +2,15 @@
 #define lcd_spi_h
 
 #include <inttypes.h>
+#include "Print.h"
+#include <SPI.h>
 
 //Instruction Set
+#define FUNCTIONSET 0x20
 #define CLEARDISPLAY 0X01
+#define SETCGRAMADDR 0x40
+#define SETDDRAMADDR 0x80
+#define CURSORSHIFT 0x10
 
 //display entry mode
 #define ENTRYMODESET 0X04
@@ -21,12 +27,15 @@
 #define CURSOROFF 0X00
 #define BLINKON 0X01
 #define BLINKOFF 0X00
-#define LCD_SETCGRAMADDR 0x40
-#define LCD_SETDDRAMADDR 0x80
+
+// flags for display/cursor shift
+#define DISPLAYMOVE 0x08
+#define CURSORMOVE 0x00
+#define MOVERIGHT 0x04
+#define MOVELEFT 0x00
 
 //for functionset
 
-#define FUNCTIONSET 0x20
 #define _5x10DOTS 0x04
 #define _5x8DOTS 0x00
 #define _1LINE 0x00
@@ -36,7 +45,7 @@
 
 
 
-class lcd_spi 
+class lcd_spi : public Print
 {
     public:
         lcd_spi(uint8_t ssPin);
@@ -45,11 +54,11 @@ class lcd_spi
         void clear();
         void noDisplay();
         void display();
+        void scrollDisplayLeft();
+        void scrollDisplayRight();
 
-
-        void print(const char[]);
         void setCursor(uint8_t, uint8_t);
-        void write(uint8_t);
+        void size_t write(uint8_t);
         void command(uint8_t);
 
         
@@ -62,7 +71,7 @@ class lcd_spi
         uint8_t charsize;
         uint8_t cs;
         uint8_t _command;
-        uint8_t _displayfunction;
+        uint8_t _displaymode;
 };
 
 #endif
