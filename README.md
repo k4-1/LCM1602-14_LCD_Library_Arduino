@@ -6,6 +6,7 @@ This library supports LCM1602A-14 LCD module I2C and SPI communication with Node
 
 > UPDATE 1.0
 >> two features added; scroll left to right; scroll right to left 
+
 >> Modify the print structure
 
 ![106861113-4928be80-6700-11eb-9203-9196ff394f06](https://user-images.githubusercontent.com/80098610/111902161-f2403400-8a76-11eb-9730-570ecfd3ff88.PNG)
