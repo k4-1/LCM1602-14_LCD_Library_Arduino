@@ -71,11 +71,25 @@ lcd.begin();
 
 # Set Cursor
 - Set the cursor to a specific position
-- First parameter sets to the column, second parameter sets the row
+- First parameter sets to the column, second parameter set the row
 - Set the cursor to column 0 (first column) and row 0 (first row)
 
 ```
 lcd.setCursor(0,0);
+```
+
+# Scroll Text from Left to Right
+- Function to move the text by scrolling from left to right.
+
+```
+lcd.scrollDisplayRight();
+```
+
+# Scroll Text from Right to Left
+- Function to move the text by scrolling from right to left.
+
+```
+lcd.scrollDisplayLeft();
 ```
 
 # Write to LCD Display
